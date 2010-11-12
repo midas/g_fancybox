@@ -1,9 +1,74 @@
 = g_fancybox
 
-Description goes here.
+https://github.com/midas/g_fancybox
+
+
+== DESCRIPTION
+
+A Guilded (http://github.com/midas/guilded/tree/master) Rails component that generates the code necessary to easily implement
+the fancybox (http://http://fancybox.net/) lightbox effect.
+
+
+== COMPATABILITY
+
+* Ruby 1.9
+* Ruby 1.8
+* Rails 3
+* Rails 2
+
+
+== INSTALL
+
+  gem install g_fancybox
+
+
+== INSTALL FOR RAILS
+
+Configure the Gem for use:
+
+  gem 'g_fancybox'          # Rails 3
+  config.gem 'g_fancybox'   # Rails 2
+
+Install the Gem:
+
+  bundle install         # Rails 3
+  rake gems:install      # Rails 2
+
+Generate:
+
+  rails generate g_fancybox:install     # Rails 3
+  script/generate g_fancybox_install    # Rails 2 (WIP)
+
+
+== USAGE:
+
+Simplest case:
+
+  <%= link_to 'Test', 'http://google.com', :class => 'fancybox' %>
+  <%= g_fancybox :fancybox => { :type => 'iframe' } %>
+
+or
+
+  <%= g_fancybox_link_to 'Test', 'http://google.com', :fancybox => { :type => 'iframe' } %>
+
+A more complex case:
+
+  <%= g_fancybox_link_to 'Test', 'http://google.com', :fancybox => { :type => 'iframe',
+                                                                     :transitionIn => 'elastic',
+                                                                     :transitionOut => 'elastic',
+                                                                     :easingIn => 'easeOutBack',
+                                                                     :easingOut => 'easeInBack',
+                                                                     :speedIn => 450 } %>
+
+g_fancybox will pass any of the API options listed at http://fancybox.net/api to the fancybox JavaScript code for you
+when you use the :fancybox option.  Notice that the options inside the :fancybox entry must be camel case, synonymous
+with accepted JavaScript practices.
+
+See http://gsgd.co.uk/sandbox/jquery/easing/ for easing options.
+
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
@@ -12,6 +77,12 @@ Description goes here.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
 
-Copyright (c) 2010 Jason Harrelson. See LICENSE for details.
+== Copyrights
+
+The Fancybox JavaScript library is Copyright (c) 2008 - 2010 Janis Skarnelis.
+Please see http://fancybox.net/ for details.
+
+The jQuery Easing Library is Copyright (c) 2008 George McGinley Smith.
+
+Copyright (c) 2010 C. Jason Harrelson (midas). See LICENSE for details.

@@ -6,10 +6,12 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "g_fancybox"
     gem.summary = %Q{A Guilded component for the Fancybox JavaScript library.}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{A Guilded component for the Fancybox JavaScript library that makes Rails development with Fancybox a breeze.}
     gem.email = "jason@lookforwardenterprises.com"
     gem.homepage = "http://github.com/midas/g_fancybox"
-    gem.authors = ["Jason Harrelson"]
+    gem.authors = ["C. Jason Harrelson (midas)"]
+    gem.add_dependency "rails", ">= 2.3"
+    gem.add_dependency "guilded", ">= 1.0"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "yard", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
